@@ -1,39 +1,61 @@
-<!DOCTYPE html>
+-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ListaTareas.css">
     <title>Lista de Tareas</title>
+    <style>
+        /* Estilos opcionales para hacerlo más bonito */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        select, button {
+            padding: 8px;
+            margin-bottom: 10px;  
+        } 
 
+    </style>
 </head>
+
 <body>
-    <h1>Lista de Lista Tareas</h1>
+    <h1>Lista de Tareas</h1>
     <section class="formulario">
-    <!-- <form action="" method="GET"></form> -->
-        <form id="introducirTareas">
-            <input type="text" placeholder="Introducir Nombre Tarea" name="nombretarea" id="nombretarea">  
-            <select name="" id=""></select>
-            <input type="date" name="" id="">
-            <input type="submit" value="action">
+        <form id="formularioDeTareas">
+
+            <label for="tarea">Introducir Tarea:</label>
+            <input type="text" id="tarea" name="tarea" required>
+            
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            
+            <label for="prioridad">Prioridad:</label>
+            <select id="prioridad" name="prioridad">
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baja">Baja</option>
+            </select>
+  
+            <button type="submit">Añadir</button>
         </form>
-        <select name="" id=""></select>
-
     </section>
 
-    <section>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>
-
-
-
-
-
-
+    <div>
+        <ul id="listaDeTareas"></ul>
+    </div>
+    <div class = "btnContainer">
+        <button class="btn"> <i class=""></i></button>
+    </div>
 
     <script src="ListaTareas.js"></script>
 </body>
