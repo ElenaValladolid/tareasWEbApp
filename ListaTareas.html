@@ -3,60 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="ListaTareas.css">
     <title>Lista de Tareas</title>
-    <style>
-        /* Estilos opcionales para hacerlo más bonito */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-        select, button {
-            padding: 8px;
-            margin-bottom: 10px;  
-        } 
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=isJBElUg-bFnBMzSFRGdG-G7ii1aVdQ32vc9Yf2YgTf7KK6HF26SInNvnmEVl9ygnjJ_VfbLrwPlWgGRZow48Z2PRJjcuG18HkfwH-frZXIRLZSwYUK1fMFgydNHB-M0_pD84LJI5jXJdzjc7tM5EGQWfIVdF7Ni8xR--69x61r81aEuXka-Tcr5jtAWX824" charset="UTF-8"></script></head>
 
-    </style>
 </head>
 
 <body>
-    <h1>Lista de Tareas</h1>
-    <section class="formulario">
-        <form id="formularioDeTareas">
+    <header>
+    <!-- <h1>Lista de Tareas</h1> -->
+    <img src="images/logo.png" alt="logo" />
+    </header>
+    <form id="item-form" action="#">
+        <div class="form-control">
+          <input
+            type="text"
+            class="form-input"
+            id="item-input"
+            name="item"
+            placeholder="Introducir tarea"
+          />
+        <div class="form-control">
+          <input type="date" id="fecha" class="form-input">
+          <select name="priority" id="priority" class="form-input">
+            <option value="0">Prioridad</option>
+            <option value="alta">Alta</option>
+            <option value="baja">Baja</option>
+          </select>
+        </div>          
+        </div>
+        <div class="form-control">
+          <button type="submit" class="btn">
+            <i class="fa-solid fa-plus"></i> Añadir
+          </button>
+        </div>
+      </form>
 
-            <label for="tarea">Introducir Tarea:</label>
-            <input type="text" id="tarea" name="tarea" required>
-            
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required>
-            
-            <label for="prioridad">Prioridad:</label>
-            <select id="prioridad" name="prioridad">
-                <option value="alta">Alta</option>
-                <option value="media">Media</option>
-                <option value="baja">Baja</option>
-            </select>
-  
-            <button type="submit">Añadir</button>
-        </form>
-    </section>
+      <div class="filter">
+        <input
+          type="text"
+          class="form-input-filter"
+          id="filter"
+          placeholder="Filtrar tareas"
+        />
+      </div>
+        
 
-    <div>
-        <ul id="listaDeTareas"></ul>
-    </div>
+    <ul id="item-list" class="items">
+
+    </ul>
     <div class = "btnContainer">
-        <button class="btn"> <i class=""></i></button>
+        <button class="btn"><i class="fa-solid fa-calendar-check"></i> Ordenar fecha</button>
+        <button class="btn"><i class="fa-solid fa-arrow-up"></i> Ordenar prioridad</button>
     </div>
+    <button id="clear" class="btn-clear">Borrar todo</button>
 
     <script src="ListaTareas.js"></script>
+
 </body>
 </html>
